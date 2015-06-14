@@ -1,5 +1,6 @@
 #!/usr/bin/env coffee
 utils = require './utils'
+city=process.argv[2]
 
 getLanguageStats = (inputFile, outFile) ->
   stats = require inputFile
@@ -20,4 +21,4 @@ getLanguageStats = (inputFile, outFile) ->
 
   utils.writeStats outFile, languages
 
-getLanguageStats './raw/github-users-stats.json', './raw/github-languages-stats.json'
+getLanguageStats './raw/github-users-stats-'+city+'.json', './raw/github-languages-stats-'+city+'.json'
