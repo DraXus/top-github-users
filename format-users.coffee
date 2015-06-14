@@ -41,20 +41,11 @@ stats2markdown = (datafile, mdfile, title) ->
   from.setYear today.getFullYear() - 1
 
   out = """
-  # Usuarios de GitHub más activos ([http://git.io/grx-top-gh](http://git.io/grx-top-gh))
+  # Top GitHub Users
 
-  Cuenta las contribuciones a los repos públicos (issues, pull requests y commits de repos públicos) en GitHub.com desde  **#{from.toGMTString()}** hasta **#{today.toGMTString()}**.
+  This ranking only takes into account the contributions to public repositories (issues, pull requests and commits) of GitHub.com from  **#{from.toGMTString()}** to **#{today.toGMTString()}**.
 
-  Si llega a 1000, lo cortamos ahí. Por lo pronto no hay peligro. Sorting algo in pseudocode:
-
-  ```coffeescript
-  githubUsers
-    .filter((user) -> user.followers > #{minFollowers})
-    .sortBy('contributions')
-    .slice(0, #{maxNumber})
-  ```
-
-  Hecho usando el API de GitHub.com ([datos en otro directorio](https://github.com/JJ/top-github-users-data/tree/master/data), [script](https://github.com/JJ/top-github-users)) adaptado de [@paulmillr](https://github.com/paulmillr) con contribuciones de [@lifesinger](https://github.com/lifesinger) y adaptación de [JJ](http://jj.github.io). Actualizado de vez en cuando.
+  Get the script [here](https://github.com/DraXus/top-github-users)). Original code by @paulmillr, @lifesinger and @JJ.
 
   <table cellspacing="0"><thead>
   <th scope="col">#</th>
