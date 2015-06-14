@@ -4,21 +4,17 @@ Generated stats: [git.io/top](http://git.io/top).
 
 ## Usage
 
-Make sure you’ve got node.js and coffeescript installed.
+Make sure you’ve got `node.js` and `coffeescript` installed.
+
+Get a personal token in https://github.com/settings/tokens
 
 ```bash
+# Authenticate (to get 5000 requests)
+curl -i -u <your_github_user> https://api.github.com/users/defunkt
 # Install deps.
 npm install
 # Download and format everything.
-make
-
-# or
-
-# Download data.
-make get
-
-# Generate stats.
-make format
+GH_ID=<your_github_user> GH_SECRET=<your_personal_token> ./get-city.sh <city_name>
 ```
 
 ## License
